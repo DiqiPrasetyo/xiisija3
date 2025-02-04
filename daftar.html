@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkblue;
+        }
+    </style>
+    <script>
+        // Menangkap jenis mobil dari URL dan menampilkannya di input
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const mobil = params.get("mobil");
+            if (mobil) {
+                document.getElementById("mobil").value = mobil;
+            }
+        };
+
+        function submitOrder(event) {
+            // Mencegah form untuk mengirim data ke server
+            event.preventDefault();
+            // Menampilkan pesan konfirmasi
+            alert("Anda telah memesan, tunggu konfirmasi dari kami.");
+            // Mengalihkan pengguna ke halaman kendaraankami.html setelah konfirmasi
+            window.location.href = "kendaraankami.html";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Formulir Pemesanan</h2>
+        <form onsubmit="submitOrder(event)">
+            <label for="mobil">Mobil yang dipilih:</label>
+            <input type="text" id="mobil" name="mobil" readonly>
+
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tanggal">Tanggal Penyewaan:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="durasi">Durasi Penyewaan (hari):</label>
+            <input type="number" id="durasi" name="durasi" required min="1">
+
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PKK</title>
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            text-align: right;
+            background-color: orange;
+            padding: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 50px; /* Sesuaikan tinggi logo */
+            border-radius: 10px; /* Opsional: buat sudut logo lebih membulat */
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            background-image: url('gambar/bgmobil1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .conten {
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .conten.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contenkiri {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: right;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .contenkiri.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .teks {
+            width: 40%;
+            padding: 50px;
+        }
+
+        .conten img, .contenkiri img {
+            width: 40%;
+            height: auto;
+            border-radius: 20px; /* Membuat sudut lebih membulat */
+        }
+
+        .footer {
+            width: 100%;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            position: relative; /* Untuk memastikan teks tetap di tengah */
+        }
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 15px; /* Menjaga logo tetap di kiri */
+        }
+
+        .footer-container img {
+            height: 40px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-content {
+            text-align: center;
+            width: 100%; /* Memastikan teks kontak tetap di tengah */
+        }
+
+        .testimoni-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-direction: column;
+            width: 40%;
+        }
+
+        .testimoni {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Jarak antara ulasan & peta */
+            padding: 20px;
+        }
+
+        .map-container {
+            width: 50%;
+        }
+
+        /* Media Query untuk responsif di layar kecil */
+        @media (max-width: 768px) {
+            .navbar {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .logo-container {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .logo-container img {
+                height: 40px; /* Menyesuaikan ukuran logo pada layar kecil */
+                margin-right: 5px;
+            }
+
+            .hero {
+                height: 300px; /* Menurunkan tinggi hero untuk layar kecil */
+            }
+
+            .conten, .contenkiri {
+                flex-direction: column; /* Menyusun konten secara vertikal */
+                text-align: center;
+            }
+
+            .conten img, .contenkiri img {
+                width: 80%; /* Menyesuaikan ukuran gambar agar lebih kecil */
+                margin: 0 auto; /* Menengahkan gambar */
+            }
+
+            .teks {
+                width: 80%; /* Mengurangi lebar teks agar lebih sesuai di layar kecil */
+                padding: 20px;
+            }
+
+            .testimoni-container {
+                width: 100%;
+                gap: 10px;
+            }
+
+            .testimoni {
+                width: 100%; /* Membuat setiap testimoni mengisi lebar kontainer */
+            }
+
+            .review-map-container {
+                flex-direction: column; /* Menyusun testimoni dan peta secara vertikal */
+            }
+
+            .map-container {
+                width: 100%; /* Menyesuaikan peta agar lebar layar kecil */
+                margin-top: 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                margin-bottom: 10px;
+            }
+
+            .footer-text {
+                font-size: 14px; /* Menyesuaikan ukuran font pada footer di layar kecil */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a button {
+                width: 100%; /* Membuat tombol menu navbar penuh lebar layar */
+                margin-bottom: 5px;
+            }
+
+            .hero h1 {
+                font-size: 24px; /* Menyesuaikan ukuran font hero di layar kecil */
+            }
+
+            .hero h3 {
+                font-size: 16px; /* Menyesuaikan ukuran font hero di layar kecil */
+            }
+
+            .teks h1 {
+                font-size: 20px; /* Menyesuaikan ukuran font judul teks di layar kecil */
+            }
+
+            .footer-text {
+                font-size: 12px; /* Menyesuaikan ukuran font footer di layar kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="gambar/logo.jpg" alt="PrimeRide Logo">
+            <span class="logo-text">PrimeRide Rental</span>
+        </div>
+        <div>
+            <a href="#"><button>Home</button></a>
+            <a href="kendaraankami.html"><button>Kendaraan Kami</button></a>
+            <a href="adminkami.html"><button>Admin Kami</button></a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>PrimeRide Rental</h1>
+        <h3>Sewa Mobil Terpercaya di PrimeRide Rental.id</h3>
+    </div>
+
+    <h1 style="text-align: center;">Mengapa Memilih PrimeRide?</h1>
+
+    <div class="conten">
+        <img src="gambar/gambar2.png" alt="Keunggulan PrimeRide">
+        <div class="teks">
+            <h2>Keunggulan PrimeRide Rental</h2>
+            <p>PrimeRide Rental menawarkan solusi perjalanan yang aman dan nyaman. Dengan berbagai pilihan kendaraan berkualitas tinggi, Anda dapat memilih sesuai kebutuhan perjalanan Anda. Berikut beberapa alasan mengapa PrimeRide adalah pilihan terbaik:</p>
+            <ul>
+                <li><strong>Kendaraan Berkualitas:</strong> Kami hanya menyediakan mobil dengan kualitas terbaik yang selalu diperiksa secara berkala.</li>
+                <li><strong>Layanan Pelanggan Terpercaya:</strong> Tim kami siap membantu Anda kapan saja, memberikan pelayanan yang cepat dan ramah.</li>
+                <li><strong>Harga Terjangkau:</strong> Nikmati kendaraan berkualitas tanpa harus merogoh kocek terlalu dalam.</li>
+                <li><strong>Pilihan Mobil Beragam:</strong> Kami menyediakan berbagai jenis mobil sesuai kebutuhan perjalanan Anda, dari city car hingga mobil keluarga.</li>
+            </ul>
+            <a href="kendaraankami.html"><button style="width: 250px; padding: 10px; margin-top: 20px;">Lihat Kendaraan Kami</button></a>
+        </div>
+    </div>
+
+
+    <div class="contenkiri">
+        <div class="teks">
+            <h1 style="font-size: 36px; font-weight: bold;">Rencanakan Perjalanan Anda</h1>
+            <p style="font-size: 18px; color: #555;">Dapatkan saran perjalanan dan persiapan yang diperlukan untuk perjalanan lancar. Dengan pilihan kendaraan terbaik dan tips perjalanan dari ahli, perjalanan Anda akan terasa lebih nyaman dan menyenangkan.</p>
+            
+            <!-- Menambahkan ikon atau bullet point -->
+            <ul style="font-size: 16px; color: #333;">
+                <li><strong>Rencana Perjalanan Sempurna:</strong> Tips perjalanan yang terperinci sesuai tujuan Anda.</li>
+                <li><strong>Pemilihan Kendaraan Tepat:</strong> Saran kendaraan yang cocok untuk perjalanan Anda.</li>
+                <li><strong>Perlengkapan Perjalanan:</strong> Jangan lupa persiapkan segala perlengkapan penting!</li>
+            </ul>
+    
+            <!-- Tombol Call to Action -->
+            <a href="tipsperjalanan.html">
+                <button style="padding: 12px 30px; background-color: #FF8C00; color: white; font-size: 16px; border-radius: 5px; border: none; cursor: pointer; margin-top: 20px;">Baca Panduan Perjalanan</button>
+            </a>
+        </div>
+        
+        <!-- Menambahkan efek hover pada gambar -->
+        <img src="gambar/wisata1.jpeg" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    
+
+    <div class="conten">
+        <img src="gambar/koper1.jpg">
+        <div class="teks">
+            <h1>Mulai Perjalanan</h1>
+            <p>Nikmati perjalanan Anda dengan kendaraan pilihan Anda.</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 50px;">
+        <a href="kendaraankami.html"> <button style="width: 500px; height: 30px;">Pesan Sekarang</button></a>
+    </div>
+
+    
+   <h2 style="text-align: center;">Apa Kata Pelanggan Kami & Lokasi Kami</h2>
+<div class="review-map-container">
+    <!-- Testimoni -->
+    <div class="testimoni-container">
+        <div style="display: flex; gap: 15px;">
+            <div class="testimoni">
+                <p>"Pelayanan sangat baik! Mobil bersih dan nyaman."</p>
+                <h4>- Budi Santoso</h4>
+            </div>
+            <div class="testimoni">
+                <p>"Sewa mobil di sini cepat dan mudah, sangat direkomendasikan!"</p>
+                <h4>- Siti Rahma</h4>
+            </div>
+        </div>
+        <div style="display: flex; gap: 15px;">
+            <div class="testimoni">
+                <p>"Mobil yang disediakan terjamin aman dan nyaman bintang 5 pokoknya "</p>
+                <h4>- Hamba Allah</h4>
+            </div>
+            <div class="testimoni">
+                <p>"Mobilnya bagus tapi harga terjangkau sipp dah"</p>
+                <h4>- Agus</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Peta Lokasi -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63333.99865906068!2d109.61241837090294!3d-7.510808779272837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6563a53d5a4779%3A0x5027a76e3563350!2sPunggelan%2C%20Banjarnegara%2C%20Jawa%20Tengah!5e0!3m2!1sen!2sid!4v1706950654502!5m2!1sen!2sid"  
+            width="100%" 
+            height="300" 
+            style="border:0; border-radius: 10px;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+    
+
+
+
+    <div class="footer">
+        <div class="footer-container">
+            <img src="gambar/logo.jpg" alt="PrimeRide Logo">
+            <span class="footer-text">PrimeRide Rental</span>
+        </div>
+        <div class="footer-content">
+            <p>Banjarnegara, Jawa Tengah<br>PrimeRide Rental<br>0812 2876 0173</p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function revealOnScroll() {
+            const sections = document.querySelectorAll('.conten, .contenkiri');
+            sections.forEach(section => {
+                const position = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (position < windowHeight - 100) {
+                    section.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

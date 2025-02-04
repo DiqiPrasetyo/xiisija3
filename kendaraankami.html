@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendaraan Kami</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            text-align: right;
+            background-color: orange;
+            padding: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 50px; /* Sesuaikan tinggi logo */
+            border-radius: 10px; /* Opsional: buat sudut logo lebih membulat */
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Background Section */
+        .bg {
+            background-image: url('gambar/bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
+            color: black;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        /* Animasi Fade In */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styling untuk mobil */
+        .mobil-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .mobil {
+            width: 30%;
+            text-align: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .mobil img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .mobil img:hover {
+            transform: scale(1.1);
+        }
+
+        .mobil figcaption {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .pesan-button {
+            margin-top: 10px;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .pesan-button:hover {
+            background: darkblue;
+        }
+        
+        /* Animasi Fade In */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .footer {
+            width: 100%;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            text-align: center;
+            color: black;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="gambar/logo.jpg" alt="PrimeRide Logo">
+            <span class="logo-text">PrimeRide Rental</span>
+        </div>
+        <div class="navbar">
+            <a href="html1.html"><button>Home</button></a>
+            <a href="#"><button>Kendaraan Kami</button></a>
+            <a href="adminkami.html"><button>Admin Kami</button></a>
+        </div>
+    </div>
+    
+    
+
+    <div class="bg">
+        <div>
+            <h1>Kendaraan Yang Kami Sediakan</h1>
+            <p>Suzuki APV</p>
+            <p>Toyota Hiace Commuter</p>
+            <p>Isuzu Elf Microbus</p>
+            <p>Hyundai New H-1</p>
+            <p>Daihatsu Luxio</p>
+            <p>Daihatsu Gran Max Mini Bus</p>
+        </div>
+    </div>
+
+    <div class="mobil-container">
+        <figure class="mobil">
+            <img src="gambar/Daihatsu Gran Max Mini Bus.jpg" alt="Daihatsu Gran Max Mini Bus">
+            <figcaption>Daihatsu Gran Max Mini Bus</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Daihatsu%20Gran%20Max"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+        
+        <figure class="mobil">
+            <img src="gambar/Daihatsu Luxio.jpg" alt="Daihatsu Luxio">
+            <figcaption>Daihatsu Luxio</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Daihatsu%20Luxio"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+        
+        <figure class="mobil">
+            <img src="gambar/Hyundai New H-1.jpg" alt="Hyundai New H-1">
+            <figcaption>Hyundai New H-1</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Hyundai%20New%20H-1"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+        <figure class="mobil">
+            <img src="gambar/Isuzu Elf Microbus.jpg" alt="Isuzu Elf Microbus">
+            <figcaption>Isuzu Elf Microbus</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Isuzu%20Elf%20Microbus"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+
+        <figure class="mobil">
+            <img src="gambar/Suzuki APV.jpg" alt="Suzuki APV">
+            <figcaption>Suzuki APV</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Suzuki%20APV"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+
+        <figure class="mobil">
+            <img src="gambar/Toyota Hiace Commuter.jpg" alt="Toyota Hiace Commuter">
+            <figcaption>Toyota Hiace Commuter</figcaption>
+            <figcaption>Rp.2.000.000,00/hari</figcaption>
+            <a href="daftar.html?mobil=Toyota%20Hiace%20Commuter"><button class="pesan-button">Pesan Sekarang</button></a>
+        </figure>
+    </div>
+    </div>
+
+
+    <div style="padding: 15px;">
+        <footer class="footer">         
+              <p>
+                "Pelayanan Pelanggan Terbaik" untuk kualitas layanan yang unggul.<br>
+                Banjarnegara, Jawa Tengah<br>
+                PrimeRide Rental<br>
+                0812 2876 0173<br>
+              </p>
+        </footer>
+    </div>
+    
+</body>
+</html>

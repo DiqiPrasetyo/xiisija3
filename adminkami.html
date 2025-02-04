@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Kami</title>
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            text-align: right;
+            background-color: orange;
+            padding: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 50px; /* Sesuaikan tinggi logo */
+            border-radius: 10px; /* Opsional: buat sudut logo lebih membulat */
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .bgtim {
+            text-align: center;
+            background-image: url('gambar/bgtim.webp'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .admin-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .admin {
+            width: 30%;
+            text-align: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .admin figcaption {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .footer{
+            width: 100%;
+            background-color:pink;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="gambar/logo.jpg" alt="PrimeRide Logo">
+            <span class="logo-text">PrimeRide Rental</span>
+        </div>
+        <div class="navbar">
+        <a href="html1.html"><button>Home</button></a>
+        <a href="kendaraankami.html"><button>Kendaraan Kami</button></a>
+        <a href="#"><button>Admin Kami</button></a>
+    </div>
+
+    </div>
+    
+    <div class="bgtim">
+        <h2>Sewa Mobil Terpercaya di PrimeRide Rental.id</h2>
+    </div>
+    
+    <div class="admin-container">
+        <figure class="admin">
+            <img src="gambar/diqi_resized.jpg" alt="Diqi Prasetyo">
+            <figcaption>Diqi Prasetyo</figcaption>
+            <figcaption>CEO</figcaption>
+        </figure>
+        <figure class="admin">
+            <img src="gambar/bimo_resized.jpg" alt="Bimo Argiansyah">
+            <figcaption>Bimo Argiansyah</figcaption>
+            <figcaption>COO</figcaption>
+        </figure>
+        <figure class="admin">
+            <img src="gambar/lulu_resized.jpg" alt="Bimo Argiansyah">
+            <figcaption>Lulu Najla Setiyadi</figcaption>
+            <figcaption>CFO</figcaption>
+        </figure>
+        <figure class="admin">
+            <img src="gambar/Nabila_resized.jpg" alt="Bimo Argiansyah">
+            <figcaption>Nabila Putri Lestari</figcaption>
+            <figcaption>CTO</figcaption>
+        </figure>
+    </div>
+
+    <div style="padding: 15px;">
+        <footer class="footer">         
+              <p>
+                "Pelayanan Pelanggan Terbaik" untuk kualitas layanan yang unggul.<br>
+
+                Banjarnegara,Jawa Tengah<br>
+
+                PrimeRide Rental<br>
+
+                0812 2876 0173<br>
+              </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
